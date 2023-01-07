@@ -53,7 +53,7 @@ class CurrentTimeService {
    */
   public function getCurrentTime() {
     $config = $this->configFactory->get('sbstory.settings');
-    $sbstory_timezone = $config->get('sbstory_timezone') ?? '';
+    $sbstory_timezone = $config->get('sbstory_timezone') ?? 'America/Chicago';
     $now = $this->time->getCurrentTime();
     $current_date_time['current_date'] = $this->dateFormatter->format($now, 'custom', 'l, d F Y', $sbstory_timezone);
     $current_date_time['current_time'] = $this->dateFormatter->format($now, 'custom', 'h : i a', $sbstory_timezone);

@@ -7,7 +7,6 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\sbstory\Service\CurrentTimeService;
-use Drupal\Core\Cache\Cache;
 
 /**
  * Provides an 'Automated Logout info' block.
@@ -20,7 +19,7 @@ use Drupal\Core\Cache\Cache;
  */
 class SiteLocationDisplayBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
-   /**
+  /**
    * The configuration factory.
    *
    * @var \Drupal\Core\Config\ConfigFactoryInterface
@@ -37,8 +36,16 @@ class SiteLocationDisplayBlock extends BlockBase implements ContainerFactoryPlug
   /**
    * Constructs an AutologoutWarningBlock object.
    *
+   * @param array $configuration
+   *   A configuration array containing information about the plugin instance.
+   * @param string $plugin_id
+   *   The plugin_id for the plugin instance.
+   * @param mixed $plugin_definition
+   *   The plugin implementation definition.
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The config factory.
+   * @param \Drupal\sbstory\Service\CurrentTimeService $current_time_service
+   *   Get the configured timezone.
    */
   public function __construct(
     array $configuration,
@@ -70,7 +77,7 @@ class SiteLocationDisplayBlock extends BlockBase implements ContainerFactoryPlug
     );
   }
 
-    /**
+  /**
    * {@inheritdoc}
    */
   public function build() {
@@ -85,4 +92,3 @@ class SiteLocationDisplayBlock extends BlockBase implements ContainerFactoryPlug
   }
 
 }
-

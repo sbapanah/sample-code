@@ -1,19 +1,14 @@
 <?php
 
-/**
- * @file
- * Contains Drupal\sbstory\Form\SiteLocationSettings.
- */
-
 namespace Drupal\sbstory\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class SiteLocationSettings.
+ * Class SiteLocationSettings.Provides the configuration form of the module.
  *
- * @package Drupal\xai\Form
+ * @package Drupal\sbstory\Form
  */
 class SiteLocationSettings extends ConfigFormBase {
 
@@ -47,7 +42,7 @@ class SiteLocationSettings extends ConfigFormBase {
       'Asia/Kolkata' => 'Asia/Kolkata',
       'Europe/Amsterdam' => 'Europe/Amsterdam',
       'Europe/Oslo' => 'Europe/Oslo',
-      'Europe/London' => 'Europe/London'
+      'Europe/London' => 'Europe/London',
     ];
 
     $form['sbstory_country'] = [
@@ -72,13 +67,6 @@ class SiteLocationSettings extends ConfigFormBase {
       '#default_value' => $config->get('sbstory_timezone'),
     ];
     return parent::buildForm($form, $form_state);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function validateForm(array &$form, FormStateInterface $form_state) {
-    parent::validateForm($form, $form_state);
   }
 
   /**

@@ -10,10 +10,10 @@
  */
 function sbstory_theme() {
   return [
-      'site_location' => [
-        'variables' => [
-          'data' => NULL
-        ],
+    'site_location' => [
+      'variables' => [
+        'data' => NULL,
       ],
-    ];
-  }
+    ],
+  ];
+}
