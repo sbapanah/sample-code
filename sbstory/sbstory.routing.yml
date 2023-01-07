@@ -1,0 +1,7 @@
+sbstory.config:
+  path: '/admin/config/sbstory-settings'
+  defaults:
+    _form: '\Drupal\sbstory\Form\SiteLocationSettings'
+    _title: 'Sbstory Module settings'
+  requirements:
+    _permission: 'administer site configuration'

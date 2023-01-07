@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Contains sbstory_module.module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function sbstory_theme() {
+  return [
+      'site_location' => [
+        'variables' => [
+          'data' => NULL
+        ],
+      ],
+    ];
+  }

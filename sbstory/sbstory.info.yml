@@ -1,0 +1,5 @@
+name: Site location story
+type: module
+description: Module to view the site location and current time in the desired format
+core_version_requirement: ^9
+package: Custom
