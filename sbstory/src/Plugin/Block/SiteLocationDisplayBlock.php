@@ -84,10 +84,17 @@ class SiteLocationDisplayBlock extends BlockBase implements ContainerFactoryPlug
     $config = $this->configFactory->get('sbstory.settings');
     $data['sbstory_country'] = $config->get('sbstory_country') ?? '';
     $data['sbstory_city'] = $config->get('sbstory_city') ?? '';
+    $sbstory_timezone = $config->get('sbstory_timezone') ?? 'America/Chicago';
     $data['current_date_time'] = $this->currentTimeService->getCurrentTime();
+    $context = $data['current_date_time']['current_time'] . $data['current_date_time']['current_date'] . $sbstory_timezone; 
     return [
       '#theme' => 'site_location',
       '#data' => $data,
+      '#cache' => [
+        'tags' => [
+          $context,
+        ],
+      ]
     ];
   }
 
